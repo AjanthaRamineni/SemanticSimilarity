@@ -1,0 +1,979 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head><title>The Code Project - Free Source Code and Tutorials</title><base target=_top>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta NAME="Description" CONTENT="Free source code and tutorials for Windows developers. Programming help for Visual C++, Windows, MFC, C++, GUI, ASP, XML, UML, SOAP, ATL, VB, ADO, SQL, DCOM, COM, Windows DNA, CToolBar, CMenu, CDockBar, CButton, CEdit, CStatic, CListCtrl, CTreeCtrl, CTreeView, CListView, CListBox, CFrameWnd, CMDIFrameWnd, CStatusBar, CTabCtrl">
+<meta NAME="Keywords" CONTENT="Free source code, Visual C++, C#, C Sharp, .NET, ASP.NET, ADO.NET, COM+, Windows, libraries, MFC, development tools, C++, GUI, Microsoft Foundation Class, MFC, C++, GUI, ASP, XML, UML, SOAP, ATL, VB, ADO, SQL, DCOM, COM, Windows DNA, CToolBar, CMenu, CDockBar, CButton, CEdit, CStatic, CListCtrl, CTreeCtrl, CTreeView, CListView, CListBox, CFrameWnd, CMDIFrameWnd, CStatusBar, CTabCtrl">
+</head>
+
+<body>
+ET»·¾³ÏÂ¼¸ÖÖ²»Í¬µÄÓÊ¼þ·¢ËÍ½â¾ö·½°¸
+
+ÈÕÆÚ£º2003-11-27 17:20:28
+³ö´¦£º- 
+×÷Õß£º- 
+ 
+1¡¢ Ê¹ÓÃoutLookÌá¹©µÄ·¢ËÍ
+
+Èç£ºÎÒ¼û¹ýµÄÓÃÓÑÈí¼þU8Éú²úÖÆÔì(ÑÝÊ¾°æ)£¬ÆäÖÐµÄÓÊ¼þ¹¦ÄÜ¾ÍÊÇÍ¨¹ýµ÷ÓÃoutLookµÄActiveX ×é¼þ
+
+ÓÅµã£º¿ª·¢¼òµ¥
+
+È±µã£ºÒÀÀµoutlook×é¼þ£¬SMTP ÓÊ¼þ·þÎñ
+
+
+
+ÓÊ¼þ·¢ËÍµÄ´úÂëÈçÏÂ£º
+
+    Private Sub Send()
+
+        Dim outObj As New Outlook.Application()
+
+        Dim Item As Outlook.MailItemClass
+
+        Item = outObj.CreateItem(0)
+
+        Item.To = "lihonggen0@163.com "
+
+        Item.Subject = "hello"
+
+        Item.Body = "hell"
+
+        Item.Attachments.Add("C:\abc.txt")
+
+        Item.Send()
+
+End Sub
+
+
+
+²Î¿¼£ºÊ¹ÓÃ Microsoft Outlook 2002 ¿ª·¢½â¾ö·½°¸http://www.microsoft.com/china/msdn/library/dndotnetout2k2/html/odc_oldevsol.asp
+
+
+
+2¡¢ WEB¿ª·¢£¬ÔÚASP.NETÖÐÒýÓÃSystem.Web.MailÀà
+
+System.Web.Mail ÃüÃû¿Õ¼ä°üº¬Ê¹Äú¿ÉÒÔÊ¹ÓÃ CDOSYS£¨Windows 2000 µÄÐ­×÷Êý¾Ý¶ÔÏó£©ÏûÏ¢×é¼þÀ´¹¹ÔìºÍ·¢ËÍÏûÏ¢µÄÀà¡£ÓÊ¼þÏûÏ¢ÊÇÍ¨¹ýÄÚÖÃÔÚ Microsoft Windows 2000 ÖÐµÄ SMTP ÓÊ¼þ·þÎñ»òÈÎÒâµÄ SMTP ·þÎñÆ÷À´´«ËÍµÄ¡£´ËÃüÃû¿Õ¼äÖÐµÄÀà¿ÉÒÔÔÚ ASP.NET »òÈÎºÎÍÐ¹ÜÓ¦ÓÃ³ÌÐò
+
+MailAttachmentÌá¹©ÓÃÓÚ¹¹Ôìµç×ÓÓÊ¼þ¸½¼þµÄÊôÐÔºÍ·½·¨¡£
+
+MailMessageÌá¹©ÓÃÓÚ¹¹Ôìµç×ÓÓÊ¼þµÄÊôÐÔºÍ·½·¨¡£
+
+SmtpMailÌá¹©ÓÃÓÚÊ¹ÓÃ Windows 2000 µÄÐ­×÷Êý¾Ý¶ÔÏó (CDOSYS) ÏûÏ¢×é¼þÀ´·¢ËÍÏûÏ¢µÄÊôÐÔºÍ·½·¨¡£
+
+ÓÊ¼þ¿ÉÒÔÍ¨¹ý Microsoft Windows 2000 ÖÐÄÚÖÃµÄ SMTP ÓÊ¼þ·þÎñ»òÈÎÒâ SMTP ·þÎñÆ÷À´´«ËÍ¡£System.Web.Mail ÃüÃû¿Õ¼äÖÐµÄÀàÐÍ¿ÉÒÔÔÚ ASP.NET »òÈÎºÎÍÐ¹ÜÓ¦ÓÃ³ÌÐòÊ¹ÓÃ¡£
+
+Smtp·þÎñÆ÷µÄÉèÖÃ£¬ÏÖÔÚÒ»Ð©Ãâ·ÑÓÊ¼þÌá¹©ÉÌÊÇ²»ÔÙÌá¹©Õë¶ÔËùÓÐÓÊ¼þÌá¹©Smtp·þÎñ£¬ÔÚ·¢ËÍÓÊ¼þµÄÊ±ºò£¬ÐèÒªÑéÖ¤ÓÃ»§ÐÅÏ¢£¬¿¼ÂÇSmtpÓÃ»§ÑéÖ¤ÎÊÌâ
+
+Èç¹ûSmtp·þÎñÆ÷ÔÚ±¾µØ¼ÆËã»ú£¬·¢ËÍËÙ¶ÈºÜ¿ìµÄ£¬»ù±¾ÉÏ²»ÓÃµ£ÐÄ£¬Èç¹û²»ÊÇ±¾µØ·þÎñÆ÷£¬ÄÇÃ´·¢ËÍµÄÊ±ºò×îºÃ²»ÒªÒÔ´ËÌ«¶à£¬Ò»ÊÇËÙ¶ÈÎÊÌâ£¬¶þÊÇÒÔ´Ë·¢ËÍÌ«¶àÓÊ¼þ£¬Smtp·þÎñÆ÷¿ÉÄÜÈÏÎªÊÇÀ¬»øÓÊ¼þ¶ø¾Ü¾ø·þÎñ
+
+´úÂëÈçÏÂ:
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+
+        Dim mailObj As New MailMessage()
+
+
+
+        Dim smtp As SmtpMail
+
+
+
+        ''¶¨ÒåSMTP·þÎñÆ÷µÄÃû³Æ 
+
+        smtp.SmtpServer = "smtp.163.com"
+
+        ''¶¨ÒåÓÊ¼þµÄ·¢ËÍµØÖ· 
+
+        mailObj.From = "lihonggen@163.com"
+
+
+
+        ''¶¨ÒåÓÊ¼þµÄ½ÓÊÕµØÖ· 
+
+        mailObj.To = " lihonggen0@163.com"
+
+
+
+        ''¶¨ÒåÓÊ¼þµÄ°µËÍµØÖ· 
+
+        ''    mailObj.Bcc "aa@sina.com"
+
+
+
+        ''¶¨ÒåÓÊ¼þµÄ³­ËÍµØÖ· 
+
+        ''      mailObj.Cc = "aaa@sina.com"
+
+
+
+        ''¶¨ÒåÓÊ¼þµÄÖ÷Ìâ 
+
+        mailObj.Subject = "Ö÷Ìâ"
+
+
+
+        ''¶¨ÒåÓÊ¼þµÄÖ÷Ìå 
+
+        mailObj.Body = "ÓÊ¼þÖ÷Ìå£¡"
+
+
+
+        ''ÓÊ¼þÒÔ HTMLµÄ¸ñÊ½·¢ËÍ 
+
+        mailObj.BodyFormat = MailFormat.Html
+
+
+
+        ''¶¨ÒåÓÊ¼þµÄÓÐÏÞ¼¶£¬ÔÚ´ËÉè¶¨Îª¸ß 
+
+        mailObj.Priority = MailPriority.High
+
+
+
+        ''¸ø·¢ËÍµÄÓÊ¼þ¸½¼ÓÉÏÒ»¸ö¸½¼þ 
+
+        mailObj.Attachments.Add(New MailAttachment("c:\lihonggen.doc"))
+
+        smTp.Send(mailObj)
+
+    End Sub
+
+
+
+3¡¢ ÔÚVB.NET»òC#¿ª·¢Windows Ó¦ÓÃ³ÌÐòÖÐÊ¹ÓÃSystem.Net.Sockets
+
+Ò²ÊÇ»ùÓÚSMTPÐ­Òé
+
+Ò»¡¢SMTPÐ­Òé¼ò½é
+
+1¡¢  ¿Í»§¶ËÍ¨¹ý·þÎñÆ÷µÄ25¶Ë¿Ú½¨Á¢TCP/IPÁ¬½Ó
+
+·þÎñÆ÷¶Ë£º 220 server.com Simple Mail Transfer Service Ready
+
+2¡¢  ¿Í»§¶ËÊ¹ÓÃ¡°HELO¡±ÃüÁî±êÊ¶·¢¼þÈË
+
+¿Í»§¶Ë£ºHELO server.com
+
+·þÎñÆ÷¶Ë£º250 server.com
+
+3¡¢  ¿Í»§¶Ë·¢ËÍMAILÃüÁî£¬·þÎñÆ÷¶ËÒÔOK×÷ÎªÏìÓ¦±íÃ÷×¼±¸½ÓÊÕ
+
+¿Í»§¶Ë£º MAIL FROM: <A@B.com>
+
+·þÎñÆ÷¶Ë£º 250 OK
+
+4¡¢  ¿Í»§¶Ë·¢ËÍRCPTÃüÁî±êÊ¶ÊÕ¼þÈË£¬·þÎñÆ÷¶Ë»ØÓ¦ÊÇ·ñÔ¸ÒâÎªÊÕ¼þÈË½ÓÊÜÓÊ¼þ
+
+¿Í»§¶Ë£ºRCPT TO: <d@e.com>
+
+·þÎñÆ÷¶Ë£º250 OK
+
+5¡¢  Ð­ÉÌ½áÊøºóÓÃÃüÁîDATA·¢ËÍ·¢ËÍÓÊ¼þ
+
+¿Í»§¶Ë£ºDATA
+
+·þÎñÆ÷¶Ë£º354 Start mail input: end with <CRLF>.<CRLF>
+
+6¡¢  ¿Í»§¶ËÒÔ.±íÊ¾½áÊøÊäÈëÄÚÈÝÒ»Æð·¢ËÍ³öÈ¥ 
+
+¿Í»§¶Ë£ºSubject:  <CRLF>
+
+ÄÚÈÝ<CRLF>
+
+.<CRLF>
+
+7¡¢¿Í»§¶ËÓÃQUITÃüÁîÍË³ö¡£ 
+
+              ¿Í»§¶Ë£ºQUIT
+
+·þÎñÆ÷¶Ë£º250 server.com closing transmission channel
+
+
+
+
+
+
+
+ÓÅµã£º¿ÉÒÔÔÚ´Ë»ù´¡ÉÏ¿ª·¢³ö×Ô¼ºµÄ×é¼þ£¬ÀûÓÃSocketsÎÒÃÇ¿ÉÒÔ½øÐÐÍøÂç±à³Ì¿ª·¢
+
+È±µã£º³ÌÐòÁ¿Ïà¶Ô½Ï¶à£¬
+
+
+
+·¢ËÍÓÊ¼þµÄ´úÂëÈçÏÂ£º
+
+        Dim sendData As String
+
+        Dim szData As Byte()
+
+        Dim CRLF As String
+
+        CRLF = "\r\n"
+
+
+
+        ''´´½¨Óë·þÎñÆ÷25¶Ë¿ÚµÄÁ¬½Ó
+
+        Dim SmtpServ As New TcpClient(txtsmtp.Text, 25)
+
+        lstlog.Items.Clear()
+
+
+
+        ''ÏÔÊ¾·þÎñÆ÷³õÊ¼ÐÅÏ¢
+
+        Dim NetStrm As NetworkStream
+
+        NetStrm = SmtpServ.GetStream()
+
+
+
+        Dim RdStrm As New StreamReader(SmtpServ.GetStream())
+
+        If RdStrm.ReadLine() <> "" Then lstlog.Items.Add(RdStrm.ReadLine())
+
+        ''
+
+        sendData = "HELO server " + CRLF
+
+        szData = System.Text.Encoding.ASCII.GetBytes(sendData.ToCharArray())
+
+        NetStrm.Write(szData, 0, szData.Length)
+
+        lstlog.Items.Add(RdStrm.ReadLine())
+
+
+
+        ''±êÖ¾·¢¼þÈË
+
+        sendData = "MAIL FROM: " + "<" + txtfrom.Text + ">" + CRLF
+
+        szData = System.Text.Encoding.ASCII.GetBytes(sendData.ToCharArray())
+
+        NetStrm.Write(szData, 0, szData.Length)
+
+        lstlog.Items.Add(RdStrm.ReadLine())
+
+
+
+        ''±êÖ¾ÊÕ¼þÈË
+
+        sendData = "RCPT TO: " + "<" + txtTo.Text + ">" + CRLF
+
+        szData = System.Text.Encoding.ASCII.GetBytes(sendData.ToCharArray())
+
+        NetStrm.Write(szData, 0, szData.Length)
+
+        lstlog.Items.Add(RdStrm.ReadLine())
+
+
+
+        ''×¼±¸·¢ËÍÄÚÈÝ
+
+        sendData = "DATA " + CRLF
+
+        szData = System.Text.Encoding.ASCII.GetBytes(sendData.ToCharArray())
+
+        NetStrm.Write(szData, 0, szData.Length)
+
+        lstlog.Items.Add(RdStrm.ReadLine())
+
+
+
+        ''·¢ËÍÖ÷Ìâ
+
+        sendData = "SUBJECT: " + txtsub.Text + CRLF
+
+        ''·¢ËÍÄÚÈÝ
+
+        sendData = sendData + txtmsg.Text + CRLF
+
+
+
+        ''½áÊø·¢ËÍ
+
+        sendData = sendData + "." + CRLF
+
+        szData = System.Text.Encoding.ASCII.GetBytes(sendData.ToCharArray())
+
+        NetStrm.Write(szData, 0, szData.Length)
+
+        lstlog.Items.Add(RdStrm.ReadLine())
+
+
+
+
+
+        ''ÍË³ö
+
+        sendData = "QUIT " + CRLF
+
+        szData = System.Text.Encoding.ASCII.GetBytes(sendData.ToCharArray())
+
+        NetStrm.Write(szData, 0, szData.Length)
+
+        lstlog.Items.Add(RdStrm.ReadLine())
+
+
+
+
+
+        ''¹Ø±ÕÁ¬½Ó
+
+        NetStrm.Close()
+
+        RdStrm.Close()
+
+        lstlog.Items.Add("Á¬½Ó¹Ø±Õ")
+
+        lstlog.Items.Add("·¢ËÍ³É¹¦")
+
+
+
+´ó¼Ò»¹¿ÉÒÔ²Î¿¼£ºÊ¹ÓÃC# ´´½¨ÓÊ¼þ·¢ËÍ×é¼þ(SMTP)
+
+http://www.aspcool.com/lanmu/browse1.asp?ID=968&bbsuser=csharp
+
+
+
+4¡¢ IIS SMTP×Ô´øµÄ»ù±¾µÄ·¢ÐÅ×é¼þCDONTS
+
+Äã²»±Ø×¨ÃÅÏÂÔØ£¬Î¢ÈíÒÑ¾­Ìá¹©ÁËÕâ¸ö×é¼þ£¬Ö»Òª°²×°ÁË2000£¬NTµÄSMTP¾Í»áÓÐµÄ¡£
+
+ÓÅµã£º×é¼þÓÉ²Ù×÷ÏµÍ³×Ô´ø
+
+È±µã£º¹¦ÄÜ±È½Ï²î£¬¿ÉÀ©Õ¹ÐÔ²»Ç¿
+
+        Mymail = CreateObject("CDONTS.NewMail")
+
+        Mymail.From = *** ''ÐÅ¼þ·¢ËÍÕßÐÅÏä
+
+        Mymail.To = *** ¡®ÐÅ¼þ½ÓÊÕÕßÐÅÏä
+
+        Mymail.CC = *** ''³­ËÍ
+
+        Mymail.BCC = *** ¡¯ÃÜ¼þ·¢ËÍ
+
+        Mymail.Subject = *** ¡®ÐÅ¼þÖ÷Ìâ
+
+        Mymail.Body = *** ¡¯ÐÅ¼þÕýÎÄ
+
+        ''ÉèÖÃÓÅÏÈ¼¶£¬0-²»ÖØÒª£¬1-Ò»°ã£¬2-ÖØÒª¡£
+
+        Mymail.Importance = 2
+
+        Mymail.Send()
+
+        Mymail = Nothing
+
+
+
+5¡¢ Ê¹ÓÃJMail×é¼þ
+
+Jmail¾ßÓÐÒÔÏÂÌØµã£º
+
+£¨1£©¿ÉÒÔ·¢ËÍ¸½¼þ£»
+£¨2£©ÏêÏ¸ÈÕÖ¾ÄÜÁ¦£¬±ãÓÚÄã²é¿´ÎÊÌâËùÔÚ£»
+£¨3£©ÉèÖÃÓÊ¼þ·¢ËÍµÄÓÅÏÈ¼¶£»
+£¨4£©Ö§³Ö¶àÖÖ¸ñÊ½µÄÓÊ¼þ·¢ËÍ£¬±ÈÈçËµÒÔHTML»òÕßTXTµÄ·½Ê½·¢ËÍÓÊ¼þ¡£ÕâÊÇ¸öÃâ·ÑµÄ×é¼þ¡£
+£¨5£©ÃÜ¼þ·¢ËÍ/(CC)³­ËÍ/½ô¼±ÐÅ¼þ·¢ËÍÄÜÁ¦£»
+£¨6£©×î¹Ø¼üµÄ¾ÍÊÇ--Ãâ·ÑµÄ×é¼þ£¬²»±Ø·¢Ç®£¬ËùÒÔ·Ç³£ÖµµÃÊ¹ÓÃ¡£ 
+
+ÍøÕ¾£ºhttp://www.dimac.net/,Ä¿Ç°°æ±¾ÊÇ4.3
+
+
+
+JMail×é¼þµÄ³£ÓÃÊôÐÔ£º
+
+Body ¡¡¡¡ÓÊ¼þÕýÎÄ 
+
+Logging ¡¡¡¡µ÷ÓÃLog¼ÇÂ¼£¬¹©DebugÓÃ 
+
+Priority ¡¡¡¡ÓÊ¼þµÄÓÅÏÈ³Ì¶È£¬´Ó1µ½5 
+
+Sender ¡¡¡¡·¢¼þÈË 
+
+ServerAddress ¡¡¡¡SMTP·þÎñÆ÷µÄIPµØÖ·»òÃû³Æ 
+
+Subject ¡¡¡¡ÓÊ¼þ±êÌâ 
+
+
+
+JMail×é¼þµÄ³£ÓÃ·½·¨£º
+
+AddAttachment ¡¡¡¡Ö¸¶¨¸½¼þÎÄ¼þ 
+
+AddRecipient ¡¡¡¡¼ÓÈëÒ»¸öÊÕ¼þÈË 
+
+AddRecipientBCC ¡¡¡¡Òþ²ØµÄ¸±±¾³­ËÍ£¬Ö»ÓÐ·¢¼þÈËºÍBCCÊÕ¼þÈËÖªµÀ¡£ 
+
+AddRecipientCC ¡¡¡¡¸±±¾³­ËÍ 
+
+Execute ¡¡¡¡ËÍ³öÓÊ¼þ 
+
+
+
+ÁË½â±ØÒªµÄÊôÐÔ¼°·½·¨ºó£¬ÓàÏÂµÄ²¿·Ö½ÓÊÕÊ¹ÓÃÕßÊäÈëµÄEmail£¬µ±³É²ÎÊý´«¸øAddRecipient·½·¨£¬È»ºó¸ù¾ÝÐèÒªÌîÉÏÆäÓàÊôÐÔ£¬×îºóÒÔExecute·½·¨¼Ä³ö¡£ÀýÈç£º
+
+        Dim JMail
+
+        JMail = Server.CreateObject("JMail.SMTPMail")
+
+        JMail.Logging = True
+
+        JMail.ServerAddress = "202.96.144.48"
+
+        JMail.Sender = "lihonggen0@163.com"
+
+        JMail.Subject = "subject."
+
+        JMail.Body = "body."
+
+        JMail.AddRecipient("bbbb@163.com")
+
+        JMail.AddAttachment("c:\go.gif")
+
+        JMail.Priority = 3
+
+        JMail.Execute()
+
+        JMail = Nothing
+
+
+
+×Ü½á£ºÑ¡ÔñºÎÖÖ·½°¸£¬ÊÓ³ÌÐòµÄÓÃÍ¾ºÍÐèÇó¶ø¶¨£¬±¾ÎÄÀý³öµÄ¼¸ÖÖ·½°¸£¬¹©´ó¼Ò²Î¿¼¡£ÀýÈçÓÃÓÑÈí¼þU8£¬µ÷ÓÃoutlook×é¼þ£¬Ò»ÑùÕûºÏµ½×Ô¼ºµÄÈí¼þÖÐ¡£ÎÒ±àÐ´µÄ¹ÜÀíÏµÍ³£¬×Ô¼ºÐ´×é¼þ£¨SMTP£©£¬¹¦ÄÜÍ¬ÑùÇ¿´ó£¬²»¹ýCodingµÄÊ±¼ä¾Í³¤ÁË£¡ 
+
+<div style="MARGIN-TOP: 7px; FONT-SIZE: 13pt; COLOR: #ff9900">
+  <b>Welcome to The Code Project.</b>
+</div>
+<div>
+  Your place for <a href="http://www.codeproject.com/script/articles/sections.asp"><b>5,682</b></a>
+  free C++, C# and .NET articles, code snippets, discussions, news and the best
+  bunch of developers on the net.
+</div>
+<form id="ForumSelectForm" name="ForumSelectForm" action="http://www.codeproject.com/script/comments/forums.asp" method="get">
+  <table style="MARGIN-TOP: 3pt" cellSpacing="0" cellPadding="0" width="100%" border="0">
+    <tbody>
+      <tr vAlign="top">
+        <td style="FONT-SIZE: 13pt; MARGIN-BOTTOM: 3pt"><b><a href="http://www.codeproject.com/script/profile/modify.asp">Join
+          Code Project Today</a></b></td>
+        <td width="10" rowSpan="2">&nbsp;</td>
+        <td style="FONT-SIZE: 13pt; MARGIN-BOTTOM: 6pt" noWrap colSpan="2"><b><a href="http://www.codeproject.com/store/">Shop
+          at The Code Project</a></b></td>
+      </tr>
+      <tr>
+        <td noWrap>&nbsp;&#8226; <a href="http://www.codeproject.com/script/profile/whos_who.asp"><b>848,530</b>
+          members and growing!</a><br>
+          &nbsp;&#8226; <a href="http://www.codeproject.com/info/guide.asp">What is
+          The Code Project?</a><br>
+          &nbsp;&#8226; <a href="http://www.codeproject.com/script/competitions/monthly">Monthly
+          Programming competition</a><br>
+          &nbsp;&#8226; <select id="forumid" style="FONT-SIZE: 10pt" onchange="OnForumSelectChange();" size="1" name="forumid">
+            <option value="0" selected>Got Programming Questions?</option>
+            <option value="1647">Visual C++</option>
+            <option value="4486">ATL / WTL / STL</option>
+            <option value="1648">COM</option>
+            <option value="3785">Managed C++</option>
+            <option value="1649">C#</option>
+            <option value="12076">ASP.NET</option>
+            <option value="1646">Visual Basic/VB.NET</option>
+            <option value="1640">Web Development</option>
+            <option value="1650">.NET Framework</option>
+            <option value="1725">SQL / ADO / ADO.NET</option>
+            <option value="3421">XML / XSL</option>
+            <option value="1644">Operating Systems / SysAdmin</option>
+            <option value="3304">Work Issues</option>
+            <option value="1641">Article Requests</option>
+            <option value="1651">Collaboration / Testing</option>
+            <option value="1642">General Discussions</option>
+            <option value="1645">Suggestions</option>
+            <option value="2605">The Soapbox (Unmoderated)</option>
+          </select><input class="FormButton" type="submit" value="Go"></td>
+        <td vAlign="center" align="middle"><a href="https://secure.codeproject.com/store/order.asp?st=33419945"><img height="65" src="http://www.codeproject.com/store/images/vsnet2003_sm.jpg" width="75" border="0"></a></td>
+        <td noWrap>&nbsp;&#8226; <a href="https://secure.codeproject.com/store/order.asp?st=33419945">MSDN
+          Universal from <b>$1950</b></a><br>
+          &nbsp;&#8226; <a href="https://secure.codeproject.com/store/order.asp?st=33419945">MSDN
+          Enterprise from <b>$1500</b></a><br>
+          &nbsp;&#8226; <a href="https://secure.codeproject.com/store/order.asp?st=33419945">Visual
+          Studio .NET 2003 <b>$899</b></a><br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+<!-- include file="script/rumor/newsflash.inc" -->
+<table cellSpacing="0" cellPadding="1" width="100%" bgColor="#ffcc99" border="0">
+  <tbody>
+    <tr>
+      <td width="100%">
+        <table cellSpacing="0" cellPadding="4" width="100%" bgColor="white" border="0">
+          <tbody>
+            <tr>
+              <td bgColor="#fbedbb" colSpan="2"><b><a title="view all surveys" href="http://www.codeproject.com/script/survey/list.asp">Current
+                Surveys</a></b></td>
+            </tr>
+            <tr height="1">
+              <td bgColor="#ff9900" colSpan="2" height="1">&nbsp;</td>
+            </tr>
+            <tr>
+              <td class="smalltext" width="100%"><a href="http://www.codeproject.com/script/survey/survey.asp?survey=347"><b>Your
+                favourite ASP.NET articles from December</b></a></td>
+              <td class="smalltext" vAlign="top" noWrap align="right">(30 votes,
+                0 comments) <a href="http://www.codeproject.com/script/survey/detail.asp?survey=347">Results</a></td>
+            </tr>
+            <tr>
+              <td class="smalltext" width="100%"><a href="http://www.codeproject.com/script/survey/survey.asp?survey=346"><b>Your
+                favourite C# articles from December</b></a></td>
+              <td class="smalltext" vAlign="top" noWrap align="right">(60 votes,
+                2 comments) <a href="http://www.codeproject.com/script/survey/detail.asp?survey=346">Results</a></td>
+            </tr>
+            <tr>
+              <td class="smalltext" width="100%"><a href="http://www.codeproject.com/script/survey/survey.asp?survey=345"><b>Your
+                favourite MFC / C++ articles from December</b></a></td>
+              <td class="smalltext" vAlign="top" noWrap align="right">(46 votes,
+                0 comments) <a href="http://www.codeproject.com/script/survey/detail.asp?survey=345">Results</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<map name="Tabstrip">
+<area shape="RECT" alt="MFC/C++" coords="1,2,69,25" href="http://www.codeproject.com/index.asp?cat=2">
+<area shape="RECT" alt="C#" coords="70,2,113,25" href="http://www.codeproject.com/index.asp?cat=3">
+<area shape="RECT" alt="ASP/ASP .NET" coords="114,2,181,25" href="http://www.codeproject.com/index.asp?cat=4">
+<area shape="RECT" alt=".NET" coords="182,2,234,25" href="http://www.codeproject.com/index.asp?cat=5">
+<area shape="RECT" alt="All Topics" coords="235,1,308,24" href="http://www.codeproject.com/index.asp?cat=1">
+<area shape="RECT" alt="All CodeProject Settings" coords="309,1,388,24" href="http://www.codeproject.com/script/profile/modify.asp"></map>
+<table cellSpacing="0" cellPadding="0">
+  <tbody>
+    <tr>
+      <td><img src="http://www.codeproject.com/images/tabs/tabAll.gif" useMap="#Tabstrip" border="0" width="392" height="25"></td>
+    </tr>
+  </tbody>
+</table>
+<table cellSpacing="0" cellPadding="1" width="100%" bgColor="#ff9900" border="0">
+  <tbody>
+    <tr>
+      <td>
+        <table cellSpacing="0" cellPadding="0" width="100%" bgColor="white" border="0">
+          <tbody>
+            <tr>
+              <td>
+                <table cellPadding="0" width="100%" border="0">
+                  <tbody>
+                    <tr>
+                      <td colSpan="3">
+                        <table cellSpacing="0" cellPadding="2" width="100%" bgColor="white" border="0">
+                          <tbody>
+                            <tr bgColor="#ff9900">
+                              <td colSpan="2"><font color="white"><b>Feature
+                                Article</b></font></td>
+                            </tr>
+                            <tr>
+                              <td width="100%">
+                                <div class="smallText">
+                                  <a href="http://www.codeproject.com/cpp/duration.asp">Precise
+                                  duration measurement</a><br>
+                                  by <b>Laurent Guinnard</b><br>
+                                  A simple class that provides high precision
+                                  timing.
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <br>
+                      </td>
+                    </tr>
+                    <tr vAlign="top">
+                      <td width="50%" bgColor="white">
+                        <table cellSpacing="0" cellPadding="2" width="100%" bgColor="white" border="0">
+                          <tbody>
+                            <tr bgColor="#ff9900">
+                              <td><b><a style="COLOR: white" href="http://www.codeproject.com/script/articles/top_articles.asp?st=0">Latest
+                                Best Picks</a></b></td>
+                            </tr>
+                            <tr>
+                              <td class="smallText" width="100%"><a href="http://www.codeproject.com/useritems/xp_md5.asp">MD5
+                                Hash SQL Server Extended Stored Procedure</a><br>
+                                by <b>Vic Mackey</b> &nbsp;&nbsp;5/5 (5 votes)</td>
+                            <tr>
+                              <td class="smallText">An extended stored procedure
+                                for SQL Server that implements an optimized MD5
+                                hash algorithm. Very small DLL (barely 7 KB).<br>
+                                <br>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="smallText" width="100%"><a href="http://www.codeproject.com/jscript/DHTMLHierarchicalWebTab.asp">DHTML
+                                Hierarchical Web Tab</a><br>
+                                by <b>Steve Puri</b> &nbsp;&nbsp;4.96/5 (11
+                                votes)</td>
+                            <tr>
+                              <td class="smallText">A client-side dynamic
+                                hierarchical web tab with DXImageTransform
+                                effects.<br>
+                                <br>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="smallText" width="100%"><a href="http://www.codeproject.com/statusbar/ExtStatusControlBar.asp">CExtStatusControlBar
+                                - Managing status bar's panes is getting easier</a><br>
+                                by <b>Dmitriy Yakovlev of Foss Software, Inc.</b>
+                                &nbsp;&nbsp;4.8/5 (31 votes)</td>
+                            <tr>
+                              <td class="smallText">An enhanced status bar which
+                                allows you to easily add/remove almost any
+                                controls to/from its panes, on-the-fly.<br>
+                                <br>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="smallText" width="100%"><a href="http://www.codeproject.com/dialog/DavidKotchanFileDialog.asp">Implementing
+                                a Read-Only 'File Open' or 'File Save' Common
+                                Dialog</a><br>
+                                by <b>dkotchan</b> &nbsp;&nbsp;4.73/5 (19 votes)</td>
+                            <tr>
+                              <td class="smallText">Some interesting
+                                customization techniques are presented for
+                                making the 'File' common dialogs read-only.<br>
+                                <br>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="smallText" width="100%"><a href="http://www.codeproject.com/useritems/ToDoList2.asp">ToDoList
+                                2.8 - A simple yet effective way to keep track
+                                of your current programming tasks</a><br>
+                                by <b>.dan.g.</b> &nbsp;&nbsp;4.7/5 (584 votes)</td>
+                            <tr>
+                              <td class="smallText">A tree-based task manager
+                                with native XML support for easy web site
+                                integration<br>
+                                <br>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                      <td>&nbsp;</td>
+                      <td width="50%">
+                        <table cellSpacing="0" cellPadding="2" width="100%" bgColor="white" border="0">
+                          <tbody>
+                            <tr bgColor="#ff9900">
+                              <td><b><a style="COLOR: white" href="http://www.codeproject.com/showcase/">Product
+                                Showcase</a></b></td>
+                            </tr>
+                            <tr>
+                              <td width="100%"><font class="links" size="1"><a href="http://www.codeproject.com/showcase/va.asp">Visual
+                                Assist .NET 7.1 and Visual Assist 6.0</a><br>
+                                by <b>Whole Tomato</b><br>
+                                <font color="black">A Visual C++ Add-In that
+                                improves your coding performance like no other.
+                                Shift IntelliSense into hyperdrive and start ...</font><br>
+                                <br>
+                                </font></td>
+                            </tr>
+                            <tr>
+                              <td width="100%"><font class="links" size="1"><a href="http://www.codeproject.com/showcase/tangible.asp">tangible®
+                                architect&#8482; model-based code generation for
+                                VS.NET and UML</a><br>
+                                by <b>tangible engineering</b><br>
+                                <font color="black">This product showcase
+                                describes how to model and use a generated
+                                object-oriented data access layer, generated
+                                with ...</font><br>
+                                <br>
+                                </font></td>
+                            </tr>
+                            <tr>
+                              <td width="100%"><font class="links" size="1"><a href="http://www.codeproject.com/showcase/dundas_chart_for_dotnet.asp">Dundas
+                                Chart for .NET</a><br>
+                                by <b>Dundas Software</b><br>
+                                <font color="black">Dundas Chart for .NET is a
+                                fully managed, feature filled charting component
+                                that has been written entirely in C# for both
+                                ...</font><br>
+                                <br>
+                                </font></td>
+                            </tr>
+                            <tr>
+                              <td width="100%"><font class="links" size="1"><a href="http://www.codeproject.com/showcase/CVC1103.asp">Building
+                                with third party code</a><br>
+                                by <b>David E. Quigley</b><br>
+                                <font color="black">This first installation of
+                                my three-part series &quot;Building with third
+                                party code&quot; will introduce special ...</font><br>
+                                <br>
+                                </font></td>
+                            </tr>
+                            <tr>
+                              <td width="100%"><font class="links" size="1"><a href="http://www.codeproject.com/showcase/TallComponents.asp">Create
+                                and manipulate PDF documents - 100% .NET</a><br>
+                                by <b>Frank Rem</b><br>
+                                <font color="black">TallPDF.NET and PDFKit.NET
+                                are 100% .NET components written entirely in C#
+                                for creating, manipulating and reading PDF ...</font><br>
+                                <br>
+                                </font></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table cellSpacing="0" cellPadding="4" width="100%">
+                  <tbody>
+                    <tr bgColor="#ff9900">
+                      <td><b><a style="COLOR: white" href="http://www.codeproject.com/info/latest.asp">Last
+                        10 updates</a></b> <span style="FONT-SIZE: 9pt; COLOR: white">(category:
+                        All Topics)</span> <a href="http://www.codeproject.com/webservices/articlerss.aspx?cat=1"><img alt="RSS Feed" src="http://www.codeproject.com/images/rss.gif" border="0" width="30" height="14"></a></td>
+                      <td vAlign="texttop" align="right"><font color="white"><a title="Latest Additions" href="http://www.codeproject.com/info/latest.asp"><img height="15" src="http://www.codeproject.com/images/more.gif" width="15" border="0"></a></font></td>
+                    </tr>
+                    <tr>
+                      <td vAlign="top" colSpan="2">
+                        <table width="100%">
+                          <tbody>
+                            <tr>
+                              <td vAlign="top" noWrap><font class="links" size="1">29
+                                Jan 2004&nbsp;&nbsp;<br>
+                                <font color="darkorange" size="1">(updated)</font></font></td>
+                              <td width="100%"><font class="links" size="1"><a title="An article on wrapping the Win32 threading APIs." href="http://www.codeproject.com/threads/ThreadClass.asp">A
+                                C++ Thread Class</a><br>
+                                <b>Wytek Szymanski</b></font></td>
+                            </tr>
+                            <tr>
+                              <td vAlign="top" noWrap><font class="links" size="1">29
+                                Jan 2004&nbsp;&nbsp;<br>
+                                <font color="darkorange" size="1">(updated)</font></font></td>
+                              <td width="100%"><font class="links" size="1"><a title="Part two of the logging service - the viewer" href="http://www.codeproject.com/cpp/logviewer.asp">A
+                                realtime logfile viewer</a><br>
+                                <b>Rob Manderson</b></font></td>
+                            </tr>
+                            <tr>
+                              <td vAlign="top" noWrap><font class="links" size="1">29
+                                Jan 2004&nbsp;&nbsp;<br>
+                                <font color="darkorange" size="1">(updated)</font></font></td>
+                              <td width="100%"><font class="links" size="1"><a title="Reusable C# code for client-server programming in .NET" href="http://www.codeproject.com/csharp/XYNetSocket.asp">A
+                                Simple .NET TCP Socket Component</a><br>
+                                <b>Xiangyang Liu</b></font></td>
+                            </tr>
+                            <tr>
+                              <td vAlign="top" noWrap><font class="links" size="1">29
+                                Jan 2004&nbsp;&nbsp;<br>
+                                <font color="green" size="1">(new)</font></font></td>
+                              <td width="100%"><font class="links" size="1"><a title="This article shows a workaround to the graphics bug that a checkbox or radio button is displayed with a black background on themed dialogs." href="http://www.codeproject.com/useritems/ThemedDialog.asp">Correctly
+                                drawn themed dialogs in WinXP</a><br>
+                                <b>Luuk Weltevreden</b> [unedited]</font></td>
+                            </tr>
+                            <tr>
+                              <td vAlign="top" noWrap><font class="links" size="1">29
+                                Jan 2004&nbsp;&nbsp;<br>
+                                <font color="green" size="1">(new)</font></font></td>
+                              <td width="100%"><font class="links" size="1"><a title="An article on how to gracefully trap application errors in asp.net applications" href="http://www.codeproject.com/aspnet/JcGlobalErrorHandling.asp">Global
+                                Error Handling in ASP.NET</a><br>
+                                <b>James Coleman</b></font></td>
+                            </tr>
+                            <tr>
+                              <td vAlign="top" noWrap><font class="links" size="1">29
+                                Jan 2004&nbsp;&nbsp;<br>
+                                <font color="green" size="1">(new)</font></font></td>
+                              <td width="100%"><font class="links" size="1"><a title="A  component for popup infos with configurable lifetime and callback features" href="http://www.codeproject.com/useritems/PI.asp">Pi,
+                                a small but helpful popup info implemented in C#</a><br>
+                                <b>fuad.abdallah</b> [unedited]</font></td>
+                            </tr>
+                            <tr>
+                              <td vAlign="top" noWrap><font class="links" size="1">29
+                                Jan 2004&nbsp;&nbsp;<br>
+                                <font color="green" size="1">(new)</font></font></td>
+                              <td width="100%"><font class="links" size="1"><a title="This article speaks about how to use SQLDataAdapter and its update method without using SQLCommandBuilder" href="http://www.codeproject.com/cs/database/sqldawithoutsqlcb.asp">SQLDataAdapter
+                                without using SQLCommandBuilder</a><br>
+                                <b>vinoth1979</b></font></td>
+                            </tr>
+                            <tr>
+                              <td vAlign="top" noWrap><font class="links" size="1">29
+                                Jan 2004&nbsp;&nbsp;<br>
+                                <font color="darkorange" size="1">(updated)</font></font></td>
+                              <td width="100%"><font class="links" size="1"><a title="A tree-based task manager with native XML support for easy web site integration" href="http://www.codeproject.com/useritems/ToDoList2.asp">ToDoList
+                                2.8 - A simple yet effective way to keep track
+                                of your current programming tasks</a><br>
+                                <b>.dan.g.</b> [unedited]</font></td>
+                            </tr>
+                            <tr>
+                              <td vAlign="top" noWrap><font class="links" size="1">28
+                                Jan 2004&nbsp;&nbsp;<br>
+                                <font color="darkorange" size="1">(updated)</font></font></td>
+                              <td width="100%"><font class="links" size="1"><a title="An article on adding a HitTest method for a ListView control." href="http://www.codeproject.com/cs/miscctrl/CSharpHitTest.asp">A
+                                ListView HitTest for C#</a><br>
+                                <b>row4utc</b></font></td>
+                            </tr>
+                            <tr>
+                              <td vAlign="top" noWrap><font class="links" size="1">28
+                                Jan 2004&nbsp;&nbsp;<br>
+                                <font color="green" size="1">(new)</font></font></td>
+                              <td width="100%"><font class="links" size="1"><a title="An article on authenticating user against Active Directory and Edirectory" href="http://www.codeproject.com/csharp/arbauthentication.asp">Authentication
+                                against Active Directory and Edirectory via LDAP</a><br>
+                                <b>Abdul (Rajib) Bahar</b></font></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <p>&nbsp;
+                <table cellSpacing="0" cellPadding="2" width="100%" bgColor="white" border="0">
+                  <tbody>
+                    <tr bgColor="#ff9900">
+                      <td><font color="white"><b>Latest Tutorials</b></font></td>
+                      <td align="right"><a title="View all tutorials" href="http://www.codeproject.com/script/articles/beginners.asp"><img height="15" src="http://www.codeproject.com/images/more.gif" width="15" border="0"></a></td>
+                    </tr>
+                    <tr vAlign="top">
+                      <td class="smallText" width="100%"><a href="http://www.codeproject.com/atl/BuildingRichComponents.asp">Building
+                        Rich COMponents with Attributed ATL</a><br>
+                        <b>Oleksiy Kolisnychenko</b></td>
+                      <td class="smallText" noWrap><i><a href="http://www.codeproject.com/atl/">ATL</a></i></td>
+                    </tr>
+                    <tr vAlign="top">
+                      <td class="smallText" width="100%"><a href="http://www.codeproject.com/cs/miscctrl/DataGridZen.asp">DataGrid
+                        Zen Novice</a><br>
+                        <b>Alastair Stell</b></td>
+                      <td class="smallText" noWrap><i><a href="http://www.codeproject.com/cs/miscctrl/">C#
+                        Controls</a></i></td>
+                    </tr>
+                    <tr vAlign="top">
+                      <td class="smallText" width="100%"><a href="http://www.codeproject.com/dotnet/UB_CAS_NET.asp">Understanding
+                        .NET Code Access Security</a><br>
+                        <b>UB</b></td>
+                      <td class="smallText" noWrap><i><a href="http://www.codeproject.com/dotnet/">.NET</a></i></td>
+                    </tr>
+                    <tr vAlign="top">
+                      <td class="smallText" width="100%"><a href="http://www.codeproject.com/gen/design/autp5.asp">Advanced
+                        Unit Test, Part V - Unit Test Patterns</a><br>
+                        <b>Marc Clifton</b></td>
+                      <td class="smallText" noWrap><i><a href="http://www.codeproject.com/gen/design/">Design
+                        and Strategy</a></i></td>
+                    </tr>
+                    <tr vAlign="top">
+                      <td class="smallText" width="100%"><a href="http://www.codeproject.com/com/hellotutorial7.asp">DCOM
+                        D-Mystified: A DCOM Tutorial, Step 7</a><br>
+                        <b>Brian Hart</b></td>
+                      <td class="smallText" noWrap><i><a href="http://www.codeproject.com/com/">COM/DCOM/COM+</a></i></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<!--include file="script/rumor/SiteList.inc" -->
+<table cellSpacing="0" cellPadding="4" width="100%">
+  <tbody>
+    <tr bgColor="#ff9900">
+      <td bgColor="#ff9900"><font color="white"><b>Industry News</b></font></td>
+      <td vAlign="texttop" align="right"><font color="white"><a title="Other news stories" href="http://www.codeproject.com/script/rumor/list.asp?news=0"><img height="15" src="http://www.codeproject.com/images/more.gif" width="15" border="0"></a></font></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<font class="DevNewsHeading" size="3"><a href="http://ad.doubleclick.net/click;h=v2|336B|0|0|*|y;7017402;0-0;0;8757143;31-1|1;4217920|4235816|1;;?http://msdn.microsoft.com/events/devdays/"><b>DevDays2004
+Early Bird Exclusive</b></a></font><br>
+<font style="FONT-SIZE: 7pt" size="1"><b>23 Jan 2004</b> <img height="12" src="http://www.codeproject.com/script/images/new.gif"></font>
+<font class="messagetitle">&nbsp;&nbsp;<b>Source: </b><a href="http://ad.doubleclick.net/click;h=v2|336B|0|0|*|y;7017402;0-0;0;8757143;31-1|1;4217920|4235816|1;;?http://msdn.microsoft.com/events/devdays/" target="_blank">Microsoft</a></font>
+<p class="newsflash">Register for DevDays2004 before 2/10 for just US$75, and
+learn how to build secure smart client and Web applications using Microsoft
+Visual Studio .NET. This event will help you add power and security to your
+applications immediately. For a listing of cities and dates, <a href="http://ad.doubleclick.net/click;h=v2|336B|0|0|*|y;7017402;0-0;0;8757143;31-1|1;4217920|4235816|1;;?http://msdn.microsoft.com/events/devdays/">click
+here</a>.<br>
+<br>
+<font class="DevNewsHeading" size="3"><a href="http://www.codeproject.com/useritems/eurocpianspring2004party.asp"><b>Unofficial
+EuroCPian Spring 2004 Get Together in London</b></a></font><br>
+<font style="FONT-SIZE: 7pt" size="1"><b>13 Jan 2004</b></font> <font class="messagetitle">&nbsp;&nbsp;<b>Source:
+</b><a href="http://www.codeproject.com/useritems/eurocpianspring2004party.asp" target="_blank">CodeProject</a></font>
+<p class="newsflash">Are you in Europe, free on March 13, and interested in
+meeting some fellow CodeProject members? Register your interest <a href="http://www.codeproject.com/useritems/eurocpianspring2004party.asp">here</a>.<br>
+<br>
+<table cellSpacing="0" cellPadding="1" width="100%" bgColor="#ff9900" border="0">
+  <tbody>
+    <tr>
+      <td width="100%">
+        <table cellSpacing="0" cellPadding="4" width="100%" bgColor="white" border="0">
+          <tbody>
+            <tr>
+              <td bgColor="#ff9900"><b><font color="white">Poll - Which
+                languages and technologies are you working in?</font></b><br>
+                <font class="smallText" color="black" size="1">We haven't done
+                this one for a while so it's time to take a stocktake of our
+                skills.</font></td>
+            </tr>
+            <form name="SurveyForm" action="http://www.codeproject.com/script/survey/app/store_vote.asp?survey=348" method="post">
+              <tr>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td vAlign="center"><input id="SE_1314_9627" type="checkbox" name="SE_1314_9627" value="ON"></td>
+                        <td class="smallText">C / C++</td>
+                      </tr>
+                      <tr>
+                        <td vAlign="center"><input id="SE_1314_9628" type="checkbox" name="SE_1314_9628" value="ON"></td>
+                        <td class="smallText">Visual C++ 6 or earlier</td>
+                      </tr>
+                      <tr>
+                        <td vAlign="center"><input id="SE_1314_9629" type="checkbox" name="SE_1314_9629" value="ON"></td>
+                        <td class="smallText">Visual C++ .NET (unmanaged)</td>
+                      </tr>
+                      <tr>
+                        <td vAlign="center"><input id="SE_1314_9630" type="checkbox" name="SE_1314_9630" value="ON"></td>
+                        <td class="smallText">Visual C++ .NET (managed)</td>
+                      </tr>
+                      <tr>
+                        <td vAlign="center"><input id="SE_1314_9631" type="checkbox" name="SE_1314_9631" value="ON"></td>
+                        <td class="smallText">C#</td>
+                      </tr>
+                      <tr>
+                        <td vAlign="center"><input id="SE_1314_9632" type="checkbox" name="SE_1314_9632" value="ON"></td>
+                        <td class="smallText">VB.NET</td>
+                      </tr>
+                      <tr>
+                        <td vAlign="center"><input id="SE_1314_9633" type="checkbox" name="SE_1314_9633" value="ON"></td>
+                        <td class="smallText">J#</td>
+                      </tr>
+                      <tr>
+                        <td vAlign="center"><input id="SE_1314_9634" type="checkbox" name="SE_1314_9634" value="ON"></td>
+                        <td class="smallText">ASP.NET</td>
+                      </tr>
+                      <tr>
+                        <td vAlign="center"><input id="SE_1314_9635" type="checkbox" name="SE_1314_9635" value="ON"></td>
+                        <td class="smallText">XML</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <span class="smallText">Other: </span><input class="smallText" id="Text1314" size="40" name="Text1314"></td>
+              </tr>
+            </form>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+
+</html>
+ t
+<m=   tw> >obh lsei=e
